@@ -1,65 +1,66 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+export default function Home(){
+  return(
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 dark:bg-[#111010] dark:text-neutral-100 anatialiased">
+      <div className="max-w-5xl mx-auto px-6 py-12 md:py-24 flex flex-col md:flex-row gap-12 lg:gap-24">
+        {/*Left Col: side menu*/}
+        <aside className="md:w-56 flex-shrink-0 md:sticky md:top-24 h-fit">
+          <nav className="flex flex-col gap-8 border-l border-neutral-200 dark:border-neutral-800 pl-6">
+            {/*About*/}
+            <div>
+              <a href="#about" className="font-medium tracking-tight hover:text-neutral-500 transition-colors">about me</a>
+              <ul className="mt-3 ml-2 space-y-2 border-l border-neutral-200 dark-border-neutral-800 pl-4 text-sm text-neutral-500">
+                <li><a href="#desc" className="hover:text-neutral-900 dark:hover:text-neutral-200">description</a></li>
+                <li><a href="#projects" className="hover:text-neutral-900 dark:hover:text-neutral-200">projects</a></li>
+                <li><a href="#experience" className="hover:text-neutral-900 dark:hover:text-neutral-200">experience</a></li>
+              </ul>
+            </div>
+            {/*Blog*/}
+            <div>
+              <a href="#blog" className="font-medium tracking-tight hover:text-neutral-500 transition-colors">blog</a>
+            </div>
+            {/*Contact*/}
+            <div>
+              <span className="font-medium tracking-tight">contact</span>
+              <ul className="mt-3 ml-2 space-y-2 border-l border-neutral-200 dark:border-neutral-800 pl-4 text-sm text-neutral-500">
+                <li><a href="mailto:chinnakarupusamyg2004@gmail.com" className="hover:text-neutral-900 dar:hover:text-neutral-200">email</a></li>
+                <li><a href="https://github.com/cksg2004" className="hover:text-neutral-900 dar:hover:text-neutral-200">github</a></li>
+              </ul>
+            </div>
+          </nav>
+        </aside>
+        {/*Right Col: Main content*/}
+        <main className="flex-1 space-y-24 max-w-2xl">
+          <section id="about" className="scroll-mt-24 space-y-6">
+            <h1 className="text-3xl font-bold tracking-tight">cks</h1>
+            <p id="#desc" className="text:neutral-600 dark:text-neutral-300 leading-relaxed">
+              🙋🏻‍♂️ Guys!!, I am chinna from 📍sathyamangalam. dumb🫨, playfull😊, careless😓, curious🌅, obscure🕵🏻 human 😂😂...
+            </p>
+          </section>
+          {/*Projects*/}
+          <section id="projects" className="scroll-mt-24 space-y-6">
+            <h2 className="text-xl font-semibold tracking-tight">projects</h2>
+            <div className="grid gap-2">
+              <a href="#" className="block p-4 -mx-4 rounded-lg hover:bg-neutral-100 dark:hover:bg-[#1c1b1b] transition-colors">
+                <div className="flex justify-between items-baseline">
+                  <h3 className="font-medium">Project One</h3>
+                  <span className="text-xs text-neutral-400 font-mono">2026</span>
+                </div>
+                <p className="text-sm text-neutral-500 mt-1">A high-performance minimalist application.</p>
+              </a>
+            </div>
+          </section>
+          {/*Experience*/}
+          <section id="experience" className="scroll-mt-24 space-y-6">
+            <h2 className="text-xl font-semibold tracking-tight">experience</h2>
+            <div className="border-l border-neutral-200 dark:border-neutral-800 pl-4 space-y-1">
+              <div className="flex justify-between text-sm">
+                <span className="font-medium">Developer</span>
+                <span className="text-neutral-400 font-mono text-xs">Present</span>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
     </div>
   );
 }
